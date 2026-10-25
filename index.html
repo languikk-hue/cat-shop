@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meow House | บ้านของคนรักแมว</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background: #fffaf7;
+            color: #493a35;
+        }
+
+        header {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px #0000000d;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #ef927c;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #493a35;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ef927c;
+        }
+
+        .hero {
+            padding: 65px 7%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: #ffece5;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #e77e68;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .hero img {
+            width: 48%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ed8b74;
+            color: white;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #d96f59;
+        }
+
+        section {
+            padding: 55px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: #887771;
+            margin-bottom: 35px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px #0000000b;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #887771;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #e77e68;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .about {
+            background: #fff0e9;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            background: #493a35;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 40px 6%;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero img {
+                width: 100%;
+                height: 260px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🐱 Meow House</div>
+
+        <nav>
+            <a href="#home">หน้าหลัก</a>
+            <a href="#products">สินค้า</a>
+            <a href="#about">เกี่ยวกับเรา</a>
+            <a href="#contact">ติดต่อเรา</a>
+            <a href="#products">🛒 ตะกร้า <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>โลกใบเล็กของ<br>
+                    <span>ทาสแมวทุกคน 🐾</span>
+                </h1>
+
+                <p>
+                    ยินดีต้อนรับสู่ Meow House
+                    ร้านรวมสินค้าแสนพิเศษสำหรับเจ้าเหมียว
+                    ทั้งอาหาร ของเล่น และอุปกรณ์ดูแลแมว
+                    เพื่อให้แมวของคุณมีความสุขในทุกวัน
+                </p>
+
+                <a href="#products" class="btn">เลือกซื้อสินค้าเลย ♡</a>
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1000&q=85"
+                alt="แมวน่ารัก"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x500/ffece5/493a35?text=Cute+Cat'">
+        </section>
+
+        <section id="products">
+            <h2 class="section-title">🐾 สินค้าแนะนำ</h2>
+            <p class="section-desc">
+                คัดสรรสิ่งดี ๆ เพื่อเจ้าเหมียวตัวโปรดของคุณ
+            </p>
+
+            <div class="products">
+
+                <article class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=80"
+                        alt="อาหารสัตว์เลี้ยง"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/fff0e9/493a35?text=Cat+Food'">
+
+                    <div class="card-body">
+                        <h3>🍗 อาหารแมวแสนอร่อย</h3>
+                        <p>อาหารสำหรับเจ้าเหมียว มื้ออร่อยที่แมวโปรดปราน</p>
+                        <div class="price">฿159</div>
+                        <button class="btn" onclick="addToCart('อาหารแมว',159)">
+                            เพิ่มลงตะกร้า
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=700&q=80"
+                        alt="แมวพักผ่อน"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffece5/493a35?text=Cat+Accessories'">
+
+                    <div class="card-body">
+                        <h3>🧸 ของเล่นสำหรับแมว</h3>
+                        <p>เพิ่มความสนุกให้เจ้าเหมียวได้วิ่งเล่นทุกวัน</p>
+                        <div class="price">฿89</div>
+                        <button class="btn" onclick="addToCart('ของเล่นแมว',89)">
+                            เพิ่มลงตะกร้า
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=80"
+                        alt="แมวน้อยน่ารัก"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/fff0e9/493a35?text=Cute+Kitten'">
+
+                    <div class="card-body">
+                        <h3>🛏️ ที่นอนนุ่มสำหรับแมว</h3>
+                        <p>มุมพักผ่อนแสนสบายสำหรับเจ้าเหมียวตัวโปรด</p>
+                        <div class="price">฿299</div>
+                        <button class="btn" onclick="addToCart('ที่นอนแมว',299)">
+                            เพิ่มลงตะกร้า
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <h2 class="section-title">💗 เกี่ยวกับ Meow House</h2>
+            <p>
+                เราเป็นร้านค้าออนไลน์สำหรับคนรักแมว
+                ที่อยากให้เจ้าเหมียวได้รับการดูแลอย่างดีที่สุด
+                เลือกซื้อสินค้าที่คุณชื่นชอบได้ง่าย ๆ
+                ในบรรยากาศอบอุ่นและเป็นกันเอง
+            </p>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="section-title">📩 ติดต่อเรา</h2>
+            <p class="section-desc">
+                สนใจสินค้าหรือมีข้อสงสัย สามารถติดต่อร้านได้
+            </p>
+            <a href="mailto:hello@example.com" class="btn">
+                ส่งอีเมลถึงเรา
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>🐱 Meow House — บ้านของคนรักแมว</p>
+        <p>© 2026 Meow House | Made with love ♡</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        function addToCart(productName, price) {
+            cartCount++;
+            cartTotal += price;
+
+            document.getElementById("cart-count").textContent = cartCount;
+
+            alert(
+                "เพิ่ม " + productName + " ลงตะกร้าแล้ว 🐱\n" +
+                "จำนวนสินค้า: " + cartCount + " ชิ้น\n" +
+                "ราคารวม: ฿" + cartTotal
+            );
+        }
+    </script>
+
+</body>
+</html>
